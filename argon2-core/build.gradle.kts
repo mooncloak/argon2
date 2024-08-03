@@ -39,6 +39,12 @@ kotlin {
                 implementation(KotlinX.coroutines.test)
             }
         }
+
+        val jvmTest by getting {
+            dependencies {
+                implementation("org.bouncycastle:bcprov-jdk15on:_")
+            }
+        }
     }
 }
 

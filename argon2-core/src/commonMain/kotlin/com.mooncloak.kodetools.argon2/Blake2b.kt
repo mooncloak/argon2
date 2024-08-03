@@ -63,27 +63,23 @@ internal class Blake2b internal constructor(digestSize: Int) {
         internalState[15] = IV[7] // ^ f1 with f1 = 0
     }
 
-    fun update(message: ByteArray?) {
-        if (message == null) {
-            return
-        }
-
-        update(message, 0, message.size)
-    }
-
     /**
      * update the message digest with a block of bytes.
      *
      * @param message the byte array containing the data.
      * @param offset  the offset into the byte array where the data starts.
-     * @param len     the length of the data.
+     * @param length     the length of the data.
      */
-    fun update(message: ByteArray, offset: Int, len: Int) {
+    fun update(
+        message: ByteArray,
+        offset: Int = 0,
+        length: Int = message.size
+    ) {
         var remainingLength = 0
 
         if (bufferPos != 0) {
             remainingLength = BLOCK_LENGTH_BYTES - bufferPos
-            if (remainingLength < len) {
+            if (remainingLength < length) {
                 arraycopy(message, offset, buffer, bufferPos, remainingLength)
                 t0 += BLOCK_LENGTH_BYTES.toLong()
                 if (t0 == 0L) {
@@ -93,12 +89,12 @@ internal class Blake2b internal constructor(digestSize: Int) {
                 bufferPos = 0
                 buffer.fill(0.toByte()) // clear buffer
             } else {
-                arraycopy(message, offset, buffer, bufferPos, len)
-                bufferPos += len
+                arraycopy(message, offset, buffer, bufferPos, length)
+                bufferPos += length
                 return
             }
         }
-        val blockWiseLastPos = offset + len - BLOCK_LENGTH_BYTES
+        val blockWiseLastPos = offset + length - BLOCK_LENGTH_BYTES
         var messagePos = offset + remainingLength
         while (messagePos < blockWiseLastPos) {
             t0 += BLOCK_LENGTH_BYTES.toLong()
@@ -110,8 +106,8 @@ internal class Blake2b internal constructor(digestSize: Int) {
         }
 
         // fill the buffer with left bytes, this might be a full block
-        arraycopy(message, messagePos, buffer, 0, offset + len - messagePos)
-        bufferPos += offset + len - messagePos
+        arraycopy(message, messagePos, buffer, 0, offset + length - messagePos)
+        bufferPos += offset + length - messagePos
     }
 
     /**
