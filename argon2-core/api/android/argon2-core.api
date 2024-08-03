@@ -55,14 +55,6 @@ public final class com/mooncloak/kodetools/argon2/HashFunctionKt {
 }
 
 public final class com/mooncloak/kodetools/argon2/HashUtilsKt {
-	public static final fun append (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-	public static final fun fromBytesToLongs ([B)[J
-	public static final fun intToLittleEndianBytes (I)[B
-	public static final fun intToLong (I)J
-	public static final fun littleEndianBytesToLong ([B)J
-	public static final fun longToLittleEndianBytes (J)[B
-	public static final fun xor ([J[J)V
-	public static final fun xor ([J[J[J)V
-	public static final fun xor ([J[J[J[J)V
+	public static final fun intToLittleEndian (I)[B
 }
 

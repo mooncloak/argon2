@@ -30,6 +30,10 @@ kotlin {
                 // Secure Random (CSPRNG)
                 // https://github.com/KotlinCrypto/secure-random
                 implementation("org.kotlincrypto:secure-random:_")
+
+                // Endianness
+                // https://github.com/KotlinCrypto/endians
+                implementation("org.kotlincrypto.endians:endians:_")
             }
         }
 

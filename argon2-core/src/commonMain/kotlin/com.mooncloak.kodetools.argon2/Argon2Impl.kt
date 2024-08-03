@@ -101,12 +101,12 @@ internal class Argon2Impl internal constructor(
     ) {
         val blake2b = Blake2b(ARGON2_INITIAL_DIGEST_LENGTH)
 
-        blake2b.update(intToLittleEndianBytes(parallelism))
-        blake2b.update(intToLittleEndianBytes(outputLength))
-        blake2b.update(intToLittleEndianBytes(memory))
-        blake2b.update(intToLittleEndianBytes(iterations))
-        blake2b.update(intToLittleEndianBytes(version))
-        blake2b.update(intToLittleEndianBytes(variant.ordinal))
+        blake2b.update(intToLittleEndian(parallelism))
+        blake2b.update(intToLittleEndian(outputLength))
+        blake2b.update(intToLittleEndian(memory))
+        blake2b.update(intToLittleEndian(iterations))
+        blake2b.update(intToLittleEndian(version))
+        blake2b.update(intToLittleEndian(variant.ordinal))
 
         updateWithLength(blake2b, plainTextPassword)
 
@@ -126,7 +126,7 @@ internal class Argon2Impl internal constructor(
         val initialHashWithOnes = getInitialHashLong(initialHash, oneBytes)
 
         for (i in 0 until parallelism) {
-            val iBytes: ByteArray = intToLittleEndianBytes(i)
+            val iBytes: ByteArray = intToLittleEndian(i)
 
             arraycopy(
                 iBytes,
@@ -144,16 +144,16 @@ internal class Argon2Impl internal constructor(
             )
 
             var blockHashBytes = blake2bLong(initialHashWithZeros, ARGON2_BLOCK_SIZE)
-            blockMemory[i * laneLength] = fromBytesToLongs(blockHashBytes)
+            blockMemory[i * laneLength] = blockHashBytes.toLongArray()
 
             blockHashBytes = blake2bLong(initialHashWithOnes, ARGON2_BLOCK_SIZE)
-            blockMemory[i * laneLength + 1] = fromBytesToLongs(blockHashBytes)
+            blockMemory[i * laneLength + 1] = blockHashBytes.toLongArray()
         }
     }
 
     private fun blake2bLong(input: ByteArray, outputLength: Int): ByteArray {
         var result = ByteArray(outputLength)
-        val outlenBytes: ByteArray = intToLittleEndianBytes(outputLength)
+        val outlenBytes: ByteArray = intToLittleEndian(outputLength)
 
         val blake2bLength = 64
 
@@ -422,7 +422,7 @@ internal class Argon2Impl internal constructor(
         val finalBlockBytes = ByteArray(ARGON2_BLOCK_SIZE)
 
         for (i in finalBlock.indices) {
-            val bytes: ByteArray = longToLittleEndianBytes(finalBlock[i])
+            val bytes: ByteArray = longToLittleEndian(finalBlock[i])
             arraycopy(bytes, 0, finalBlockBytes, i * bytes.size, bytes.size)
         }
 
@@ -495,10 +495,10 @@ internal class Argon2Impl internal constructor(
 
         private fun updateWithLength(blake2b: Blake2b, input: ByteArray?) {
             if (input != null) {
-                blake2b.update(intToLittleEndianBytes(input.size))
+                blake2b.update(intToLittleEndian(input.size))
                 blake2b.update(input)
             } else {
-                blake2b.update(intToLittleEndianBytes(0))
+                blake2b.update(intToLittleEndian(0))
             }
         }
 

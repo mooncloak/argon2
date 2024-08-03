@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b738962-404a-4c71-a692-f6c64846623c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Version.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/argon2-core/src/commonTest/kotlin/com.mooncloak.kodetools.argon2/NumberUtilsTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Impl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Impl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Variant.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2idHashFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2HashFunction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashFunction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argon2-core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -52,6 +48,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.JvmBlake2bTest.executor": "Debug",
+    "Gradle.NumberUtilsTest.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -69,7 +66,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.NumberUtilsTest">
     <configuration name="JvmBlake2bTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -94,8 +91,33 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="NumberUtilsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/argon2-core" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":argon2-core:cleanJvmTest" />
+            <option value=":argon2-core:jvmTest" />
+            <option value="--tests &quot;com.mooncloak.kodetools.argon2.NumberUtilsTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.NumberUtilsTest" />
         <item itemvalue="Gradle.JvmBlake2bTest" />
         <item itemvalue="Gradle.JvmBlake2bTest" />
         <item itemvalue="Gradle.JvmBlake2bTest" />
