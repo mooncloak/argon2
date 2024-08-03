@@ -8,7 +8,8 @@ package com.mooncloak.kodetools.argon2
  * Apache 2 license:
  * https://github.com/Password4j/password4j/blob/master/LICENSE
  */
-public enum class Argon2 {
+@ExperimentalArgon2Api
+public enum class Argon2Variant {
 
     /**
      * It maximizes resistance to GPU cracking attacks.

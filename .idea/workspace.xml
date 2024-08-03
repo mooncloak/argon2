@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b738962-404a-4c71-a692-f6c64846623c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/argon2-core/src/jvmTest/kotlin/com/mooncloak/kodetools/argon2/JvmBlake2bTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Version.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argon2-core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Blake2b.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Blake2b.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Impl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Impl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2Variant.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2idHashFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/Argon2HashFunction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashFunction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/argon2-core/src/commonMain/kotlin/com.mooncloak.kodetools.argon2/HashUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
+        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -95,6 +96,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.JvmBlake2bTest" />
         <item itemvalue="Gradle.JvmBlake2bTest" />
         <item itemvalue="Gradle.JvmBlake2bTest" />
       </list>

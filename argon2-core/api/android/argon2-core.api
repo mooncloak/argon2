@@ -1,17 +1,36 @@
-public final class com/mooncloak/kodetools/argon2/Argon2 : java/lang/Enum {
-	public static final field D Lcom/mooncloak/kodetools/argon2/Argon2;
-	public static final field I Lcom/mooncloak/kodetools/argon2/Argon2;
-	public static final field ID Lcom/mooncloak/kodetools/argon2/Argon2;
-	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Lcom/mooncloak/kodetools/argon2/Argon2;
-	public static fun values ()[Lcom/mooncloak/kodetools/argon2/Argon2;
+public final class com/mooncloak/kodetools/argon2/Argon2HashFunctionKt {
+	public static final fun argon2-KnNt9CU (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;[B[BIIIILcom/mooncloak/kodetools/argon2/Argon2Variant;I)Lcom/mooncloak/kodetools/argon2/HashFunction;
+	public static synthetic fun argon2-KnNt9CU$default (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;[B[BIIIILcom/mooncloak/kodetools/argon2/Argon2Variant;IILjava/lang/Object;)Lcom/mooncloak/kodetools/argon2/HashFunction;
+	public static final fun argon2Salt (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;I)[B
+	public static synthetic fun argon2Salt$default (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;IILjava/lang/Object;)[B
 }
 
-public final class com/mooncloak/kodetools/argon2/Argon2idHashFunctionKt {
-	public static final fun argon2id-lHQqhsw (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;I[BJI)Lcom/mooncloak/kodetools/argon2/HashFunction;
-	public static synthetic fun argon2id-lHQqhsw$default (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;I[BJIILjava/lang/Object;)Lcom/mooncloak/kodetools/argon2/HashFunction;
-	public static final fun argon2idSalt (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;I)[B
-	public static synthetic fun argon2idSalt$default (Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;IILjava/lang/Object;)[B
+public final class com/mooncloak/kodetools/argon2/Argon2Variant : java/lang/Enum {
+	public static final field D Lcom/mooncloak/kodetools/argon2/Argon2Variant;
+	public static final field I Lcom/mooncloak/kodetools/argon2/Argon2Variant;
+	public static final field ID Lcom/mooncloak/kodetools/argon2/Argon2Variant;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/mooncloak/kodetools/argon2/Argon2Variant;
+	public static fun values ()[Lcom/mooncloak/kodetools/argon2/Argon2Variant;
+}
+
+public final class com/mooncloak/kodetools/argon2/Argon2Version {
+	public static final field Companion Lcom/mooncloak/kodetools/argon2/Argon2Version$Companion;
+	public static final synthetic fun box-impl (I)Lcom/mooncloak/kodetools/argon2/Argon2Version;
+	public static fun constructor-impl (I)I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (ILjava/lang/Object;)Z
+	public static final fun equals-impl0 (II)Z
+	public final fun getValue ()I
+	public fun hashCode ()I
+	public static fun hashCode-impl (I)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (I)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()I
+}
+
+public final class com/mooncloak/kodetools/argon2/Argon2Version$Companion {
+	public final fun getDefault-xOF2kCc ()I
 }
 
 public abstract interface annotation class com/mooncloak/kodetools/argon2/ExperimentalArgon2Api : java/lang/annotation/Annotation {
@@ -23,7 +42,7 @@ public class com/mooncloak/kodetools/argon2/HashException : java/lang/RuntimeExc
 
 public abstract interface class com/mooncloak/kodetools/argon2/HashFunction {
 	public static final field Companion Lcom/mooncloak/kodetools/argon2/HashFunction$Companion;
-	public abstract fun hash-euJbpgo ([BLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun hash ([BLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class com/mooncloak/kodetools/argon2/HashFunction$Companion {

@@ -7,14 +7,13 @@ import kotlin.coroutines.cancellation.CancellationException
  * [ByteArray].
  */
 @ExperimentalArgon2Api
-@OptIn(ExperimentalUnsignedTypes::class)
 public fun interface HashFunction {
 
     /**
-     * Performs the hash function on the provided [source] to generate a [UByteArray] value.
+     * Performs the hash function on the provided [source] to generate a [ByteArray] value.
      */
     @Throws(HashException::class, CancellationException::class)
-    public suspend fun hash(source: UByteArray): UByteArray
+    public suspend fun hash(source: ByteArray): ByteArray
 
     public companion object
 }
@@ -26,8 +25,8 @@ public fun interface HashFunction {
  */
 @ExperimentalArgon2Api
 @OptIn(ExperimentalUnsignedTypes::class)
-public suspend operator fun HashFunction.invoke(source: UByteArray): UByteArray =
-    hash(source = source)
+public suspend operator fun HashFunction.invoke(source: UByteArray): ByteArray =
+    hash(source = source.toByteArray())
 
 /**
  * Converts the provided [source] to a [UByteArray].
@@ -35,9 +34,8 @@ public suspend operator fun HashFunction.invoke(source: UByteArray): UByteArray 
  * @see [HashFunction.invoke]
  */
 @ExperimentalArgon2Api
-@OptIn(ExperimentalUnsignedTypes::class)
-public suspend operator fun HashFunction.invoke(source: ByteArray): UByteArray =
-    hash(source = source.toUByteArray())
+public suspend operator fun HashFunction.invoke(source: ByteArray): ByteArray =
+    hash(source = source)
 
 /**
  * Converts the provided [source] to a [UByteArray] using UTF-8 encoding and calls the [invoke]
@@ -46,6 +44,5 @@ public suspend operator fun HashFunction.invoke(source: ByteArray): UByteArray =
  * @see [HashFunction.invoke]
  */
 @ExperimentalArgon2Api
-@OptIn(ExperimentalUnsignedTypes::class)
-public suspend operator fun HashFunction.invoke(source: CharSequence): UByteArray =
-    hash(source = source.toString().encodeToByteArray().asUByteArray())
+public suspend operator fun HashFunction.invoke(source: CharSequence): ByteArray =
+    hash(source = source.toString().encodeToByteArray())

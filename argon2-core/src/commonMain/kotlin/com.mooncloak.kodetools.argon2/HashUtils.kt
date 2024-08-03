@@ -101,21 +101,6 @@ public fun littleEndianBytesToLong(b: ByteArray): Long {
     return result
 }
 
-internal fun <T> arraycopy(
-    source: Array<T>,
-    sourcePosition: Int,
-    destination: Array<T>,
-    destinationPosition: Int,
-    length: Int
-) {
-    source.copyInto(
-        destination = destination,
-        destinationOffset = destinationPosition,
-        startIndex = sourcePosition,
-        endIndex = sourcePosition + length
-    )
-}
-
 internal fun arraycopy(
     source: LongArray,
     sourcePosition: Int,
@@ -160,12 +145,6 @@ internal fun arraycopy(
         endIndex = sourcePosition + length
     )
 }
-
-internal fun fromBytesToString(input: ByteArray): String =
-    input.decodeToString()
-
-internal fun fromCharSequenceToBytes(input: CharSequence?): ByteArray =
-    input?.toString()?.encodeToByteArray() ?: ByteArray(0)
 
 public fun append(cs1: CharSequence?, cs2: CharSequence?): CharSequence? {
     if (cs1.isNullOrEmpty()) {

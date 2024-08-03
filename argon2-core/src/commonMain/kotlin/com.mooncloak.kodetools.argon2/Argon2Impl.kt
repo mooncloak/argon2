@@ -14,8 +14,7 @@ import kotlinx.coroutines.coroutineScope
  * @see [Wikipedia Argon2 Explanation](https://en.wikipedia.org/wiki/Argon2)
  */
 @ExperimentalArgon2Api
-internal class Argon2HashFunction internal constructor(
-
+internal class Argon2Impl internal constructor(
     /**
      * @return the memory in bytes
      * @since 1.5.2
@@ -36,7 +35,7 @@ internal class Argon2HashFunction internal constructor(
      * @since 1.5.2
      */
     val outputLength: Int,
-    val variant: Argon2,
+    val variant: Argon2Variant,
     /**
      * @return the version of the algorithm
      * @since 1.5.2
@@ -73,25 +72,24 @@ internal class Argon2HashFunction internal constructor(
         }
     }
 
-    @OptIn(ExperimentalUnsignedTypes::class)
     internal suspend fun hash(
         plainTextPassword: ByteArray,
         salt: ByteArray,
-        pepper: CharSequence?
-    ): UByteArray {
+        pepper: ByteArray?
+    ): ByteArray {
         val blockMemory = copyOf(initialBlockMemory)
 
         initialize(
             plainTextPassword = plainTextPassword,
             salt = salt,
-            secret = fromCharSequenceToBytes(pepper),
+            secret = pepper ?: ByteArray(0),
             additional = null,
             blockMemory = blockMemory
         )
 
         fillMemoryBlocks(blockMemory)
 
-        return ending(blockMemory).asUByteArray()
+        return ending(blockMemory)
     }
 
     private fun initialize(
@@ -301,7 +299,7 @@ internal class Argon2HashFunction internal constructor(
     }
 
     private fun isDataIndependentAddressing(pass: Int, slice: Int): Boolean {
-        return (variant === Argon2.I) || (variant === Argon2.ID && (pass == 0) && (slice < ARGON2_SYNC_POINTS / 2))
+        return (variant === Argon2Variant.I) || (variant === Argon2Variant.ID && (pass == 0) && (slice < ARGON2_SYNC_POINTS / 2))
     }
 
     private fun getPrevOffset(currentOffset: Int): Int {
