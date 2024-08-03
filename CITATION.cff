@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+    - alias: "kodetools@mooncloak.com"
+      website: "https://kodetools.mooncloak.codes"
+contact:
+    - alias: "kodetools@mooncloak.com"
+      website: "https://kodetools.mooncloak.codes"
+title: "argon2"
+type: "software"
+abstract: "Kotlin multi-platform Argon2id password hashing implementation."
+license: "Apache-2.0"
+keywords:
+    - "kotlin"
+    - "multiplatform"
+    - "argon2"
+    - "argon2id"
+    - "argon"
+repository-code: "https://github.com/mooncloak/argon2"
+url: "https://github.com/mooncloak/argon2"
