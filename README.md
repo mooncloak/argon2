@@ -38,7 +38,7 @@ This project was inspired by, yet completely independent of, the following open 
 
 | Project                                        | Language | License                                                                    |
 |------------------------------------------------|----------|----------------------------------------------------------------------------|
-| [Password4J](https://github.com/chRyNaN/krypt) | Kotlin   | [Apache 2.0](https://github.com/Password4j/password4j/blob/master/LICENSE) |
+| [Password4J](https://github.com/Password4j/password4j) | Kotlin   | [Apache 2.0](https://github.com/Password4j/password4j/blob/master/LICENSE) |
 
 ## Documentation 📃
 
